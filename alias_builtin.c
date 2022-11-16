@@ -57,7 +57,7 @@ int _alias(char **args, char __attribute__((unused)) **front)
   * @var_name: name of the alias
   * @value: value of the alias. First character is a '='
   */
-void set_alias(char *var_name, cahr *value)
+void set_alias(char *var_name, char *value)
 {
 	alias_t *temp = aliases;
 	int length, j, k;

@@ -110,6 +110,11 @@ typedef struct builtin
 	int (*func)(info_t *);
 } builtin_table;
 
+/* toem_alias_builtin.c */
+void free_args(char **args, char **front);
+char **replace_aliases(char **args);
+alias_t *add_alias_end(alias_t **head, char *name, char *value);
+void print_alias(alias_t *alias);
 
 /* toem_shloop.c */
 int hsh(info_t *, char **);
@@ -201,12 +206,12 @@ int _myunsetenv(info_t *);
 int populate_env_list(info_t *);
 
 /* toem_getenv.c */
-int _env(char **args, char __attribute__((unused)) **front);
+/*int _env(char **args, char __attribute__((unused)) **front);
 int _setenv(char **args, char __attribute__((unused)) **front);
-int _unsetenv(char **args, char __attribute__((unused)) **front);
-/*char **get_environ(info_t *);
+int _unsetenv(char **args, char __attribute__((unused)) **front);*/
+char **get_environ(info_t *);
 int _unsetenv(info_t *, char *);
-int _setenv(info_t *, char *, char *);*/
+int _setenv(info_t *, char *, char *);
 
 /* toem_history.c */
 char *get_history_file(info_t *info);

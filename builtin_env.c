@@ -1,8 +1,8 @@
-#include "shell.h"
+/*#include "shell.h"
 
-int _env(char **args, char __attribute__((unused)) **front);
-int _setenv(char **args, char __attribute__((unused)) **front);
-int _unsetenv(char **args, char __attribute__((unused)) **front);
+int _env(char **args, char __attribute__((__unused__)) **front);
+int _setenv(char **args, char __attribute__((__unused__)) **front);
+int _unsetenv(char **args, char __attribute__((__unused__)) **front);
 
 /**
   * _env - prints the current environment
@@ -11,7 +11,7 @@ int _unsetenv(char **args, char __attribute__((unused)) **front);
   * Return: -1 if an error, otherwise 0.
   * Note, prints one 'variable' = 'value', per line.
   */
-int _env(char **args, char __attribute__((unused)) **front)
+/*int _env(char **args, char __attribute__((__unused__)) **front)
 {
 	int index;
 	char nc = '\n';
@@ -36,7 +36,7 @@ int _env(char **args, char __attribute__((unused)) **front)
   * Note, args[1] is the name of the new or existing PATH variable.
   * args[2] is the value to set the new or changed variable to.
   */
-int _setenv(char **args, char __attribute__((unused)) **front)
+/*int _setenv(char **args, char __attribute__((__unused__)) **front)
 {
 	char **env_var = NULL, **new_environ, *new_value;
 	size_t size;
@@ -87,7 +87,7 @@ int _setenv(char **args, char __attribute__((unused)) **front)
   * Return: -1 if it is an error, otherwise 0.
   * Note: args[1] is the PATH variable to remove
   */
-int _unsetenv(char **args, char __attribute__((unused)) **front)
+/*int _unsetenv(char **args, char __attribute__((__unused__)) **front)
 {
 	char **env_var, **new_environ;
 	size_t size;
