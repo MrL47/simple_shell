@@ -40,10 +40,10 @@ int count_tokens(char *str, char *delim)
 
 	for (index = 0; index < length; index++)
 	{
-		if (*(str + inex) != *delim)
+		if (*(str + index) != *delim)
 		{
 			tokens++;
-			index += token_length(str + index, delim);
+			index += token_len(str + index, delim);
 		}
 	}
 	return (tokens);
@@ -58,7 +58,7 @@ int count_tokens(char *str, char *delim)
   */
 char **_strtok(char *line, char *delim)
 {
-	chat **ptr;
+	char **ptr;
 	int index = 0, tokens, t, letters, l;
 
 	tokens = count_tokens(line, delim);
@@ -66,7 +66,7 @@ char **_strtok(char *line, char *delim)
 		return (NULL);
 
 	ptr = malloc(sizeof(char *) * (tokens + 2));
-	if (!pts)
+	if (!ptr)
 		return (NULL);
 
 	for (t = 0; t < tokens; t++)
@@ -74,7 +74,7 @@ char **_strtok(char *line, char *delim)
 		while (line[index] == *delim)
 			index++;
 
-		letters = token_length(line + index, delim);
+		letters = token_len(line + index, delim);
 
 		ptr[t] = malloc(sizeof(char) * (letters + 1));
 		if (!ptr[t])
@@ -85,7 +85,7 @@ char **_strtok(char *line, char *delim)
 			free(ptr);
 			return (NULL);
 		}
-		for (l - 0; l < letters; l++)
+		for (l = 0; l < letters; l++)
 		{
 			ptr[t][l] = line[index];
 			index++;
