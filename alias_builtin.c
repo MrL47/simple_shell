@@ -2,7 +2,7 @@
 
 int _alias(char **args, char __attribute__((unused)) **front);
 void set_alias(char *var_name, char *value);
-int print_alias(list_t *node);
+void print_alias(alias_t *alias);
 
 /**
   * _alias - builtin command that either prints all aliases,
@@ -93,17 +93,17 @@ void set_alias(char *var_name, char *value)
   * print_alias - prints the alias in the format name = 'value'
   * @alias: pointer to an alias
   */
-int print_alias(list_t *node)
+void print_alias(alias_t *alias)
 {
 	char *alias_string;
-	int length = _strlen(node->name) + _strlen(node->value) + 4;
+	int length = _strlen(alias->name) + _strlen(alias->value) + 4;
 
 	alias_string = malloc(sizeof(char) * (length + 1));
 	if (!alias_string)
 		return;
-	_strcpy(alias_string, node->name);
+	_strcpy(alias_string, alias->name);
 	_strcat(alias_string, "='");
-	_strcat(alias_string, node->value);
+	_strcat(alias_string, alias->value);
 	_strcat(alias_string, "'\n");
 
 	write(STDOUT_FILENO, alias_string, length);
