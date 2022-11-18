@@ -101,17 +101,6 @@ typedef struct passinfo
   * @value: the value of the alias
   * @next: a pointer to the another struct alias_s
   */
-typedef struct alias_s
-{
-	char *name;
-	char *value;
-	struct alias_s *next;
-} alias_t;
-
-/* Global aliases linked list */
-alias_t *aliases;
-
-#define INFO_INIT \
 {NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, \
 	0, 0, 0}
 
@@ -140,9 +129,6 @@ typedef struct builtin_s
 /* toem_alias_builtin.c */
 void free_args(char **args, char **front);
 char **replace_aliases(char **args);
-alias_t *add_alias_end(alias_t **head, char *name, char *value);
-void print_alias(alias_t *alias);
-int create_error(char **args, int err);
 int _strspn(char *s, char *accept);
 
 /* toem_shloop.c */
