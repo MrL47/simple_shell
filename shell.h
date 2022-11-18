@@ -141,7 +141,7 @@ typedef struct builtin_s
 void free_args(char **args, char **front);
 char **replace_aliases(char **args);
 alias_t *add_alias_end(alias_t **head, char *name, char *value);
-int print_alias(list_t *node);
+void print_alias(alias_t *alias);
 int create_error(char **args, int err);
 int _strspn(char *s, char *accept);
 
@@ -151,10 +151,14 @@ int find_builtin(info_t *);
 void find_cmd(info_t *);
 void fork_cmd(info_t *);
 
-/* toem_parser.c */
+/* toem_parser.c 
 int is_cmd(info_t *, char *);
 char *dup_chars(char *, int, int);
-char *find_path(info_t *, char *, char *);
+char *find_path(info_t *, char *, char *);*/
+
+/* parse.c */
+char **parse_cmd(char *input);
+char **_strtok(char *line, char *delim);
 
 /* loophsh.c */
 int loophsh(char **);
