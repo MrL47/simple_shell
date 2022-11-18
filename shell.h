@@ -95,12 +95,7 @@ typedef struct passinfo
 	int histcount;
 } info_t;
 
-/**
-  * struct alias_s - a new struct defining aliases
-  * @name: the name of the alias
-  * @value: the value of the alias
-  * @next: a pointer to the another struct alias_s
-  */
+#define INFO_INIT \
 {NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, \
 	0, 0, 0}
 
