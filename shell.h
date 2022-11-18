@@ -137,14 +137,14 @@ int find_builtin(info_t *);
 void find_cmd(info_t *);
 void fork_cmd(info_t *);
 
-/* toem_parser.c 
+/* toem_parse.c */ 
 int is_cmd(info_t *, char *);
 char *dup_chars(char *, int, int);
-char *find_path(info_t *, char *, char *);*/
+char *find_path(info_t *, char *, char *);
 
-/* parse.c */
+/* parse.c 
 char **parse_cmd(char *input);
-char **_strtok(char *line, char *delim);
+char **_strtok(char *line, char *delim);*/
 
 /* loophsh.c */
 int loophsh(char **);
